@@ -1,0 +1,34 @@
+---
+title: "CodeBook"
+author: "Wang Yinchu"
+date: "2/20/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## CodeBook
+
+1. steps used to create the dataset: test_train_ordered
+        
+   i. subject_test.txt, X_test.txt and y_test.txt are read and combined into a single dataset with column "subjects" denoting subjects 1 to 30, column "tests" denoting activities 1 to 6.
+   ii. variables containing mean and std are selected from features.txt and used to subset the data set
+   iii. the feature variable columns are labelled appropriately with features.txt
+   iv. "tests": activities 1 to 6 are labelled with activity_labels.txt
+   v. the above are repeated with the train data set
+   vi. the train and test datas sets are combined and ordered according to subjects and activities to form the test_train_ordered dataset
+   
+   
+2. step used to create the dataset: avg_sub_act
+
+   passing test_train_ordered dataset to the aggregate function:
+```
+avg_sub_act <- aggregate(test_train_ordered, 
+                         by = list(test_train_ordered$tests, 
+                                   test_train_ordered$subjects), 
+                         FUN = "mean")
+```
+
+   a second, independent tidy data set with the average of each variable for each activity and each subject is created.

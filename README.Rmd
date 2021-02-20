@@ -1,0 +1,23 @@
+---
+title: "Readme"
+author: "Wang Yinchu"
+date: "2/20/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Readme
+
+The repository contains:
+
+1. a tidy data set "test_train_ordered" which is a merger of the training and the test sets of the accelerometers data contained in the files provided by the assignment.
+
+2. a second, independent tidy data set with the average of each variable for each activity and each subject.
+
+3. an R script "assignment.R" used to generate the above 2 data sets (NB: the script needs to be placed in the folder of raw data to run properly)
+
+4. A markdown file called CodeBook.md describing the variables, the data, and any transformations or work performed to clean up the data in 1 and 2.
+
