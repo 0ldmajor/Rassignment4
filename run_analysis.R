@@ -54,3 +54,10 @@ avg_sub_act <- aggregate(test_train_ordered,
                          FUN = "mean")
 ## creates a second, independent tidy data set with the average of each variable
 ## for each activity and each subject.
+avg_sub_act <- subset(avg_sub_act, select = -c(Group.1, Group.2, activity))
+avg_sub_act <- merge(avg_sub_act, activity_labels, by.x = "tests", by.y = "V1", all = TRUE)
+colnames(avg_sub_act)[colnames(avg_sub_act) == "V2"] <- "activity"
+avg_sub_act <- subset(avg_sub_act, select = c(1:2, 69, 3:68))
+avg_sub_act <- subset(avg_sub_act, select = -c(tests))
+avg_sub_act <- avg_sub_act[order(avg_sub_act$subjects, avg_sub_act$activity),]
+## removes unnecessary columns and re-arrange according to subjects then activity

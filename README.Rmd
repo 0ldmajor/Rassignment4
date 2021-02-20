@@ -17,7 +17,7 @@ The repository contains:
 
 2. a second, independent tidy data set with the average of each variable for each activity and each subject.
 
-3. an R script "assignment.R" used to generate the above 2 data sets (NB: the script needs to be placed in the folder of raw data to run properly)
+3. an R script "assignment.R" used to generate the above 2 data sets (NB: the working directory should be set to the folder containing the raw data)
 
 4. A markdown file called CodeBook.md describing the variables, the data, and any transformations or work performed to clean up the data in 1 and 2.
 
